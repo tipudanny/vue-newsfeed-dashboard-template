@@ -15,16 +15,21 @@
           Third Post
         </router-link>
         <br>
-        <p @click="logout()">
-          logout
-        </p>
+        <br>
+        <div v-if="isValid == ''">
+            <router-link :to="{ name:'Login' }">
+                <input type="button" value="Login">
+            </router-link>
+        </div>
+        <div v-else>
+            <input @click="logout()" type="button" value="Logout">
+        </div>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-
 import router from "@/router";
 
 export default {
@@ -33,27 +38,27 @@ export default {
         if (localStorage.token) {
             this.token = localStorage.token;
         }
+        if (localStorage.isValid) {
+            this.isValid = localStorage.isValid;
+        }
         axios.defaults.headers.common = {'Authorization': `Bearer ${this.token}`};
-        axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
     },
     data(){
         return{
-          token:'',
+            token:'',
+            isValid:'',
         }
     },
     methods:{
         logout(){
-            axios.post('http://currier.api/api/auth/logout',this.loginInfo).then((data)=>{
-                console.log(data.data.access_token);
-                if (data.data.access_token){
-                    localStorage.token = data.data.access_token;
-                }else {
+            axios.post('http://currier.api/api/auth/logout',this.token).then((data)=>{
+                if (data.data.code == 'logout') {
+                    localStorage.isValid = '';
                     localStorage.token = '';
-                    router.push('/login');
+                    this.isValid = '';
+                    this.token = '';
                 }
-            }).catch(error => {
-                console.log("ERRRR:: ",response.errors);
-            });
+            }).catch(error => {});
         }
     }
 }

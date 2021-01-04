@@ -6,6 +6,17 @@
 <script>
 
 export default {
-  name: 'About'
+  name: 'About',
+    mounted() {
+        if (localStorage.token) {
+            this.token = localStorage.token;
+        }
+        axios.defaults.headers.common = {'Authorization': `Bearer ${this.token}`};
+    },
+    data(){
+        return{
+            token:'',
+        }
+    },
 }
 </script>

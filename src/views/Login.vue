@@ -23,25 +23,34 @@
 
 <script>
     import router from "@/router";
+    import axios from "axios";
 
     export default {
         name: "Login",
+        mounted() {
+
+        },
         data(){
             return{
                 loginInfo:{
-                    email:'',
-                    password:'',
+                    email:'tipu@gmail.com',
+                    password:'12345678',
                 },
-                token:'',
             }
         },
         methods:{
             login(){
                 axios.post('http://currier.api/api/auth/login',this.loginInfo).then((data)=>{
-                    //console.log(data.data.access_token);
-                    if (data.data.access_token){
-                        localStorage.token = data.data.access_token;
-                        router.push('/');
+                    if (data.data.access_token != ''){
+                        var token = data.data.access_token;
+                        axios.defaults.headers.common = {'Authorization': `Bearer ${token}`};
+                        axios.post('http://currier.api/api/auth/checktoken',token).then((data)=>{
+                            if (data.data.valid == 'authenticed'){
+                                localStorage.isValid = 'authenticed';
+                                localStorage.token = token;
+                                router.push('/').catch(()=>{});
+                            }
+                        }).catch();
                     }
                 }).catch(error => {
                     console.log("ERRRR:: ",response.errors);

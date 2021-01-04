@@ -21,7 +21,7 @@ const routes = [
         name: 'About',
         component: About,
         beforeEnter: (to, from, next) => {
-            if (localStorage.token != '') {
+            if (localStorage.token != '' && localStorage.isValid == 'authenticed') {
                 next()
             }
             else {
@@ -55,6 +55,7 @@ router.beforeEach((to, from, next) => {
         documentTitle += ` - ${ to.params.title }`
     }
     document.title = documentTitle;
+    console.log(to);
     next()
 })
 
