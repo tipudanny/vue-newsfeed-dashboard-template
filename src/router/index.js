@@ -11,34 +11,19 @@ window.axios = axios
 
 const routes = [
     {
-        path: '/',
-        name: 'Home',
-        component: Home,
-
+        path: '/', name: 'Home', component: Home,
+        meta: {forVisitors: true,}
     },
     {
-        path: '/about',
-        name: 'About',
-        component: About,
-        beforeEnter: (to, from, next) => {
-            if (localStorage.token != '' && localStorage.isValid == 'authenticed') {
-                next()
-            }
-            else {
-                next(false)
-                router.push('/login').catch(()=>{});
-            }
-        }
+        path: '/about', name: 'About', component: About,
+        meta: {forAuth: true},
     },
     {
-        path: '/post/:id',
-        name: 'Post',
-        //props: true,
-        component: () => import('@/views/Post.vue')
-    },{
-        path: '/login',
-        name: 'Login',
-        component: () => import('@/views/Login.vue')
+        path: '/post/:id', name: 'Post', component: () => import('@/views/Post.vue'),
+        meta: {forAuth: true}
+    },
+    {
+        path: '/login', name: 'Login', component: () => import('@/views/Login.vue')
     },
 ]
 
@@ -55,8 +40,31 @@ router.beforeEach((to, from, next) => {
         documentTitle += ` - ${ to.params.title }`
     }
     document.title = documentTitle;
-    console.log(to);
+
+    if (to.matched.some(record => record.meta.forVisitors)) {
+        if (Vue.auth.isAutheticated()) {
+            to.meta.islogged = true;
+            next()
+        } else {
+            to.meta.islogged = false;
+            next()
+        }
+    }
+    else if (to.matched.some(record => record.meta.forAuth)) {
+        if ( !Vue.auth.isAutheticated() ) {
+            to.meta.islogged = false;
+            next({
+                name: 'Login'
+            })
+        } else {
+            to.meta.islogged = true;
+            next()
+        }
+    }
     next()
+    //console.log(to)
+
+
 })
 
 export default router

@@ -23,8 +23,6 @@
 
 <script>
     import router from "@/router";
-    import axios from "axios";
-
     export default {
         name: "Login",
         mounted() {
@@ -42,15 +40,9 @@
             login(){
                 axios.post('http://currier.api/api/auth/login',this.loginInfo).then((data)=>{
                     if (data.data.access_token != ''){
-                        var token = data.data.access_token;
-                        axios.defaults.headers.common = {'Authorization': `Bearer ${token}`};
-                        axios.post('http://currier.api/api/auth/checktoken',token).then((data)=>{
-                            if (data.data.valid == 'authenticed'){
-                                localStorage.isValid = 'authenticed';
-                                localStorage.token = token;
-                                router.push('/').catch(()=>{});
-                            }
-                        }).catch();
+                        localStorage.token = data.data.access_token;
+                        localStorage.expiration = data.data.expires_in;
+                        router.push('/')
                     }
                 }).catch(error => {
                     console.log("ERRRR:: ",response.errors);

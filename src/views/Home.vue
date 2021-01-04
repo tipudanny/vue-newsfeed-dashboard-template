@@ -16,7 +16,7 @@
         </router-link>
         <br>
         <br>
-        <div v-if="isValid == ''">
+        <div v-if="isLogin == false">
             <router-link :to="{ name:'Login' }">
                 <input type="button" value="Login">
             </router-link>
@@ -30,33 +30,26 @@
 </template>
 
 <script>
-import router from "@/router";
-
 export default {
   name: 'Home',
     mounted() {
-        if (localStorage.token) {
-            this.token = localStorage.token;
+        if (this.$route.meta.islogged == true){
+            this.isLogin = true
         }
-        if (localStorage.isValid) {
-            this.isValid = localStorage.isValid;
-        }
-        axios.defaults.headers.common = {'Authorization': `Bearer ${this.token}`};
     },
     data(){
         return{
-            token:'',
-            isValid:'',
+            isLogin:false,
         }
     },
     methods:{
         logout(){
-            axios.post('http://currier.api/api/auth/logout',this.token).then((data)=>{
+            axios.post('http://currier.api/api/auth/logout').then((data)=>{
                 if (data.data.code == 'logout') {
-                    localStorage.isValid = '';
                     localStorage.token = '';
-                    this.isValid = '';
+                    localStorage.expiration = '';
                     this.token = '';
+                    this.isLogin = false;
                 }
             }).catch(error => {});
         }
