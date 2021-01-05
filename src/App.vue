@@ -1,10 +1,7 @@
 <template>
   <div id="app">
       <Header />
-      <div class="container">
-
-          <router-view/>
-      </div>
+      <router-view/>
       <Footer />
   </div>
 </template>
@@ -18,3 +15,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+/*@import'~bootstrap/dist/css/bootstrap.css';*/
+@import "assets/css/style.css";
+
+</style>

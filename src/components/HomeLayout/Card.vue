@@ -1,63 +1,75 @@
 <template>
     <div>
-        <div class="text-center m-5">
-            <h2>Our Services</h2>
-        </div>
-        <b-container class="bv-example-row">
-            <b-row>
-                <b-col>
-                    <b-card
-                        title="Card Title"
-                        img-src="https://picsum.photos/600/300/?image=25"
-                        img-alt="Image"
-                        img-top
-                        tag="article"
-                        style="max-width: 20rem;"
-                        class="mb-2"
-                    >
-                        <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </b-card-text>
-
-                        <b-button href="#" variant="primary">Go somewhere</b-button>
-                    </b-card>
-                </b-col>
-                <b-col>
-                    <b-card
-                        title="Card Title"
-                        img-src="https://picsum.photos/600/300/?image=25"
-                        img-alt="Image"
-                        img-top
-                        tag="article"
-                        style="max-width: 20rem;"
-                        class="mb-2"
-                    >
-                        <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </b-card-text>
-
-                        <b-button href="#" variant="primary">Go somewhere</b-button>
-                    </b-card>
-                </b-col>
-                <b-col>
-                    <b-card
-                        title="Card Title"
-                        img-src="https://picsum.photos/600/300/?image=25"
-                        img-alt="Image"
-                        img-top
-                        tag="article"
-                        style="max-width: 20rem;"
-                        class="mb-2"
-                    >
-                        <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </b-card-text>
-
-                        <b-button href="#" variant="primary">Go somewhere</b-button>
-                    </b-card>
-                </b-col>
-            </b-row>
-        </b-container>
+        <section class="feadback-section section-padding clearfix">
+            <div class="container">
+                <div class="row mt-5">
+                    <!-- single feadback -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-feadback">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="feadback-icon">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="feadback-details">
+                                        <h3>7492+</h3>
+                                        <p>Our Happy Clients</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single feadback -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6  feadback-mt-sm">
+                        <div class="single-feadback">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="feadback-icon">
+                                        <i class="fas fa-people-carry"></i>
+                                    </div>
+                                    <div class="feadback-details">
+                                        <h3>7492+</h3>
+                                        <p>Delivery Persons And Staffs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single feadback -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 feadback-mt feadback-mt-sm">
+                        <div class="single-feadback">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="feadback-icon">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="feadback-details">
+                                        <h3>7492+</h3>
+                                        <p>Parcels Delivered</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single feadback -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 feadback-mt">
+                        <div class="single-feadback">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="feadback-icon">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="feadback-details">
+                                        <h3>7492+</h3>
+                                        <p>Total Amount Paid</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </template>
 

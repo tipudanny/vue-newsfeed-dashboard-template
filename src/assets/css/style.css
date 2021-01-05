@@ -1,0 +1,740 @@
+/* *************************************************************************************************
+******************************************    START GLOBAL AREA CSS   ******************************
+****************************************************************************************************/
+*{
+    box-sizing:border-box;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    font-size:18px;
+    color:#979797 ;
+}
+
+a:hover{
+    text-decoration:none;
+}
+p, h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+}
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+h1 {
+    font-family: 'Source Sans Pro';
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    font-size: 42px;
+    line-height: 48px;
+    color: #fff !important;
+}
+h2 {
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    font-size: 40px;
+    line-height: 46px;
+}
+h3{
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+h4{
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+h5{
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+h6{
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    font-size:18px;
+}
+
+.section-padding{
+    padding:110px 0 !important;
+}
+.my-26{
+    margin-top:26px !important;
+    margin-bottom:26px !important;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 17px;
+    color:#333 !important;
+}
+.section-title p {
+    font-size: 18px;
+    max-width: 780px;
+    margin: 0 auto;
+    line-height: 23px;
+}
+
+.mt-70{
+    margin-top:70px;
+}
+input, textarea, button, select{
+    border-radius: 0px !important;
+}
+input:focus, button:focus, select:focus{
+    outline: 0 none !important;
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
+}
+input::placeholder, select option{
+    font-family: 'Source Sans Pro' !important;
+    font-weight: 400;
+}
+::placeholder{
+    font-size:16px;
+}
+/* *************************************************************************************************
+******************************************      END GLOBAL AREA CSS   ******************************
+****************************************************************************************************/
+
+
+/* *************************************************************************************************
+******************************************  START HOME PAGE CSS        *****************************
+****************************************************************************************************/
+
+/* ======= START HEADER SECTION CSS========= */
+.fixed-header {
+    background: #fff !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: .5s;
+    /* box-shadow: 0px 1px 19px rgba(0,0,0,.1); */
+}
+.desktop-menu{
+    display:block;
+}
+.navbar{
+    box-shadow: 0px 1px 19px rgba(0,0,0,.1);
+}
+.navbar-nav .nav-item .nav-link {
+    color: #0078B4;
+    font-weight: 600;
+    margin: 0 19px;
+}
+.navbar-nav .nav-item .nav-link:hover{
+    color:#BA1B24 ;
+}
+.navbar-nav .nav-item .nav-link:last-child{
+    margin-right:0 !important;
+}
+/* sub menu */
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    top: 68px;
+    border: none;
+    border-radius: 2px;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item {
+    color: #0077B3;
+    font-size: 18px;
+    padding-bottom: 7px;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item:hover{
+    color:#BA1B24 ;
+}
+/* mobile menu */
+.mobile-menu{
+    display: none;
+}
+/* ======= END HEADER SECTION CSS========= */
+
+/* =======START BANNER SECTION CSS========= */
+.banner-section{
+    width:100%;
+    background-image:url(../images/banner/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    position: relative;
+}
+
+.banner-inner {
+    padding-bottom: 134px;
+}
+.banner-content{
+    position: relative;
+}
+.banner-left-subtitle p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 11px;
+    margin-bottom: 41px;
+    line-height: 31px;
+    font-weight: 400;
+}
+.button a {
+    color: #0A476F !important;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    background: #fff !important;
+    padding: 12px 24px;
+    border-radius: 3px;
+    display: inline-block;
+}
+.input-group-append .btn, .input-group-prepend .btn {
+    width: 174px !important;
+}
+.search-button{
+    transition:.5s;
+}
+.search-button:hover{
+    background:#B91C24 !important;
+    border:1px solid #B91C24 !important;
+    color:#fff !important;
+}
+.consignment-track i{
+    font-size:16px;
+}
+.consignment-track-title small {
+    font-size: 16px;
+}
+.consignment-track-title span h6{
+    color:#333;
+}
+.consignment-track form input[type="search"]::placeholder{
+    font-size:15px;
+}
+.consignment-track form input[type="search"]{
+    border:1px solid #0077B3 !important;
+}
+.consignment-track {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 116px;
+}
+.consignment-track .card{
+    border:none !important;
+    border-radius: 3px !important;
+    box-shadow: 0 1px 49.98px 1.02px rgba(0,0,0,.19);
+}
+.pb-7{
+    padding-bottom:7px;
+}
+
+
+/* =======END BANNER SECTION CSS=========== */
+
+/* =======START FEADBACK SECTION CSS======= */
+.single-feadback{
+    text-align:center;
+}
+.single-feadback .card{
+    border:none;
+    box-shadow: 0 1px 49.98px 1.02px rgba(0,0,0,.19);
+    position: relative;
+}
+
+.single-feadback .card::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 11px;
+    width: 100%;
+    height: 100%;
+    background: #0078B4;
+    z-index: -1;
+    border-radius: 5px;
+}
+.single-feadback .feadback-icon i {
+    font-size: 35px;
+    color: #007BB7;
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+}
+.single-feadback .feadback-details h3 {
+    font-size: 34px;
+    color: #0077B3;
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+.single-feadback .feadback-details p{
+    color:#333;
+}
+.btn-info{
+    background-color:#007BB7;
+}
+/* =======END FEADBACK SECTION CSS======== */
+
+/* =======START OUR ADVANTAGE SECTION CSS======== */
+.advantage-accordion .card {
+    margin-bottom: 20px;
+    box-shadow: 0 0 13px 0 rgba(0,0,0,.11);
+    border: none;
+}
+.advantage-accordion .card .card-header {
+    background-color: #fff !important;
+    border: none;
+    padding: 20px 21px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.advantage-accordion .card .card-header i {
+    margin-right: 17px;
+    margin-top: 3px;
+    color: #0077B3;
+    font-size: 21px;
+}
+.advantage-accordion .card .card-header .first-icon i, .advantage-accordion .card .card-header .second-icon i,
+.advantage-accordion .card .card-header .third-icon i, .advantage-accordion .card .card-header .ten-icon i,
+.advantage-accordion .card .card-header .eleven-icon i, .advantage-accordion .card .card-header .twelve-icon i {
+    position: absolute;
+    right: 0;
+    transition:.5s;
+}
+.advantage-accordion .card .card-header h5{
+    color:#333 !important;
+}
+.advantage-accordion .card .card-body{
+    border-top:1px solid #dddddd;
+}
+.advantage-accordion .card .card-body p{
+    color:#333 !important;
+}
+.advantage-accordion .card:last-child{
+    margin-bottom:0px;
+}
+.icon-rotate{
+    transform: rotate(88deg);
+    transition:.5s;
+}
+/* =======END OUR ADVANTAGE SECTION CSS======== */
+
+/* =======START OUR SERVICES SECTION CSS======== */
+.our-services-section{
+    width:100%;
+    background-image: url(../images/our-services/service-bg.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+
+.our-services-section .service-item .card{
+    border:none !important;
+    box-shadow: 0px 15px 40px 0px rgba(0,0,0,.1);
+}
+.our-services-section .service-item .card .card-body i {
+    color: #0077B3;
+    margin-right: 15px;
+    font-size: 21px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0px 15px 40px 0px rgba(0,0,0,.1);
+    line-height: 70px;
+    text-align: center;
+}
+.our-services-section .service-item .card .card-body .service-item-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.our-services-section .service-item .card .card-body .service-item-details h6 {
+    color: #333 !important;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.service-left img{
+    transition:.5s;
+}
+.service-left img:hover{
+    transform:translateX(-20px);
+}
+/* ======= END OUR SERVICES SECTION CSS ======== */
+
+/* ======= START SERVICES AREA SECTION CSS ======== */
+.services-area-button ul li a {
+    border: 1px solid #0A476F !important;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0A476F !important;
+    padding: 8px 24px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.services-area-button ul li a:hover{
+    background:#BA1B24 ;
+    color:#fff !important;
+    border:1px solid #BA1B24 ;
+}
+.service-area-chitagong, .service-area-rangpur{
+    display:none;
+}
+.area-list ul li{
+    color:#333 !important;
+}
+/* ======= START SERVICES AREA SECTION CSS ======== */
+
+/* ======= START CALCULATE SECTION CSS ======== */
+form .single-calculate label{
+    color:#333 !important;
+}
+.calculate-result strong {
+    color: #333;
+    border: 1px solid #777;
+    padding: 5px 27px;
+    border-radius: 3px;
+    margin-top: 28px !important;
+    display: inline-block;
+    font-size: 28px;
+}
+.pricing-condition ul {
+    margin-top: 26px;
+}
+.pricing-condition ul li {
+    color: #333 !important;
+    line-height: 35px;
+}
+/* ======= END CALCULATE SECTION CSS ======== */
+
+
+
+/* *************************************************************************************************
+******************************************     END HOME PAGE CSS       *****************************
+****************************************************************************************************/
+
+
+/* *************************************************************************************************
+******************************************    START LOGIN PAGE CSS     *****************************
+****************************************************************************************************/
+
+.registration-form, .login-form {
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.16);
+}
+/* login form left */
+.login-form-left {
+    width: 100%;
+    background-image: url(../images/login/rl-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px 40px 136px 40px;
+    background-size: cover;
+}
+.registration-form-right, .login-form-right{
+    padding:100px 20px;
+}
+.registration-form-left-title h6, .login-form-left-title h6 {
+    color: #fff;
+    font-size: 28px;
+    line-height: 37px;
+    font-weight: 400;
+}
+.registration-form-left-image, .login-form-left-image{
+    text-align:center;
+}
+.registration-form-left-image img, .login-form-left-image img {
+    margin-top: 80px;
+}
+
+/* login form right */
+.registration-form-right-title h6, .login-form-right-title h6 {
+    font-size: 37px;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+.registration-form-right form input, .login-form-right form input {
+    margin-bottom: 24px;
+}
+.remember-me, .forgot-password a{
+    font-size:16px;
+    color:#333;
+}
+.mb-24{
+    margin-bottom:24px;
+}
+.contact-page-form form input.form-control,
+.contact-page-form form textarea.form-control,
+.registration-form-right form .form-group input.form-control,
+.registration-form-right form textarea.form-control,
+.login-form-right form .form-group input.form-control{
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+    border:none;
+}
+.contact-page-form form input.form-control,
+.contact-page-form form textarea.form-control,
+.registration-form-right form .form-group input.form-control:focus,
+.registration-form-right form textarea.form-control:focus,
+.login-form-right form .form-group input.form-control:focus{
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.1) !important;
+}
+.login-form-right form form .form-group button{
+    font-weight: 600;
+}
+.dont-have-account p{
+    font-size:16px;
+    color:#333;
+}
+.dont-have-account a{
+    color:#f93333 ;
+    font-size:16px;
+}
+/* *************************************************************************************************
+******************************************     END LOGIN PAGE CSS      *****************************
+****************************************************************************************************/
+
+/* *************************************************************************************************
+****************************************START REGISTRATION PAGE CSS    *****************************
+****************************************************************************************************/
+.registration-form-left {
+    width: 100%;
+    background-image: url(../images/login/rl-bg.png);
+    background-repeat: no-repeat;
+    background-position: -140px center;
+    background-size: cover;
+    /* min-height: 650px; */
+    padding: 100px 40px 349px 40px;
+}
+/* *************************************************************************************************
+**************************************** END REGISTRATION PAGE CSS     *****************************
+****************************************************************************************************/
+
+/* *************************************************************************************************
+****************************************    START CONTACT PAGE CSS     *****************************
+****************************************************************************************************/
+.contact-banner-section {
+    width: 100%;
+    background-image: url(../images/contact/bg-down-curver.png);
+    background-position: center -45px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    height: 370px;
+}
+
+.contact-banner-right img {
+    width: 100%;
+    height: auto;
+    margin-top: -49px;
+}
+.contact-form-title h3{
+    color:#333;
+    margin-bottom:25px;
+}
+
+/* branc */
+.brance {
+    box-shadow: 0 0 51px 0 rgba(0,0,0,.08);
+    padding: 24px;
+    text-align: center;
+    margin-top: 60px;
+}
+.brance h4 {
+    color: #fff;
+    background: #0077B3;
+    display: inline-block;
+    padding: 5px 45px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+}
+.branc-phone i, .branc-mail i, .branc-location i {
+    font-size: 22px;
+    color: #0077B3;
+    margin-bottom: 10px;
+}
+.branc-location p {
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 26px;
+}
+.branc-phone a, .branc-mail a, .branc-location p a{
+    color: #0077B3;
+}
+.branc-phone a:hover, .branc-mail a:hover, .branc-location p a:hover{
+    color:#BA1B24 ;
+}
+.btn-info{
+    transition:.5s;
+}
+.btn-info:hover{
+    background:#BA1B24;
+    color:#fff;
+    border:1px solid #BA1B24;
+}
+/* branc mail */
+.branc-phone, .branc-mail{
+    display: flex;
+    flex-direction: column ;
+    flex-wrap: wrap;
+}
+.branc-phone{
+    margin-top:26px;
+}
+
+
+/* sub branc information */
+.single-sub-branc {
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.24);
+    padding: 13px;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 28px;
+}
+.sub-branc-title h5 {
+    color: #fff;
+    background: #0077B3;
+    display: inline-block;
+    padding: 5px 46px;
+    border-radius: 27px;
+    margin-bottom: 20px;
+    margin-top: 7px;
+}
+.sub-branc-address p{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 7px;
+}
+
+.map-section iframe {
+    width: 100%;
+    border: 0px;
+    min-height: 500px;
+}
+
+/* *************************************************************************************************
+****************************************    END CONTACT PAGE CSS       *****************************
+****************************************************************************************************/
+
+
+/* *************************************************************************************************
+*************************************   START FOOTER SECTION CSS       *****************************
+****************************************************************************************************/
+.footer-section{
+    width:100%;
+    background-color:#0077B3;
+}
+/*start newsletter-section */
+.newsletter-section{}
+.newsletter-content{
+    position: relative;
+}
+.btn-light{
+    background-color:#0077B3;
+    color:#fff;
+}
+.newletter-content-area {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -172px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,.1);
+    padding: 25px 10px;
+    border-radius: 6px;
+}
+.footer-column-newlatter p{
+    color:#333 !important;
+}
+.newsletter .input-group-append .btn {
+    width: 108px !important;
+}
+.newsletter form input[type="search"]{
+    background:transparent !important;
+    border:none !important;
+}
+.newsletter form input[type="search"]::placeholder{
+    color:#333 !important
+}
+.newsletter{
+    border: 2px solid #0077B3;
+    padding: 4px
+}
+/*endnewsletter-section */
+
+
+.footer-column-title {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+.footer-column ul li a {
+    color: #fff !important;
+    line-height: 31px;
+    display: inline-block;
+    font-size: 18px;
+}
+.footer-column ul li a:hover{
+    color:#BA1B24 !important;
+}
+
+
+/* footer bottom */
+.footer-bottom-first-column ul li {
+    font-size: 16px;
+    color: #fff;
+    line-height: 23px;
+}
+.footer-bottom-first-column ul li a{
+    font-size:16px;
+    color:#fff;
+}
+.footer-bottom-first-column ul li a:hover{
+    color:#BA1B24;
+}
+.footer-bottom-second-column p{
+    font-size:16px;
+    color:#fff;
+}
+.footer-bottom-third-column .footer-social-icon i {
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    background: #fff;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 16px;
+    color:#0077B3;
+    transition:.5s;
+}
+.footer-bottom-third-column .footer-social-icon i:hover{
+    background:#BA1B24;
+    color:#fff;
+}
+.margin-right{
+    margin-right:0px;
+}
+/* *************************************************************************************************
+*************************************   EFND FOOTER SECTION CSS        *****************************
+****************************************************************************************************/
