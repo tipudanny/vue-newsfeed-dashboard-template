@@ -3,6 +3,14 @@ import App from './App.vue'
 import router from './router'
 import Auth from "../packages/auth/Auth";
 
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
+
 Vue.use(Auth);
 
 axios.defaults.headers.common = {'Authorization': `Bearer ${Vue.auth.getToken()}`};

@@ -24,8 +24,9 @@ export default function (Vue) {
 
 		// destroy token
 		destroyToken() {
-			localStorage.removeItem('token')
-			localStorage.removeItem('expiration')
+			/*localStorage.removeItem('token')
+			localStorage.removeItem('expiration')*/
+			localStorage.clear();
 		},
 
 		// is autheticated

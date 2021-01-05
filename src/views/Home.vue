@@ -1,39 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <ul>
-      <li>
-        <router-link :to="{ name:'Post',params:{ id: 1, title:'First Post' } }">
-          Fisrt Post
-        </router-link>
-      </li><li>
-        <router-link :to="{ name:'Post',params:{ id: 2, title:'Second Post' } }">
-          Second Post
-        </router-link>
-      </li><li>
-        <router-link :to="{ name:'Post',params:{ id: 3, title:'Third Post' } }">
-          Third Post
-        </router-link>
-        <br>
-        <br>
-        <div v-if="isLogin == false">
-            <router-link :to="{ name:'Login' }">
-                <input type="button" value="Login">
-            </router-link>
-        </div>
-        <div v-else>
-            <input @click="logout()" type="button" value="Logout">
-        </div>
-      </li>
-    </ul>
-  </div>
+    <div>
+        <Carousel />
+        <Card />
+        <Jumbotron />
+        <MediaList />
+    </div>
+
 </template>
 
 <script>
+import Carousel from "@/components/HomeLayout/Carousel";
+import Card from "@/components/HomeLayout/Card";
+import Jumbotron from "@/components/HomeLayout/Jumbotron";
+import MediaList from "@/components/HomeLayout/MediaList";
 export default {
-  name: 'Home',
+    components: {
+        name: 'Home',
+        Carousel: Carousel,
+        Card: Card,
+        Jumbotron: Jumbotron,
+        MediaList: MediaList,
+    },
     mounted() {
-        if (this.$route.meta.islogged == true){
+        if (this.$route.meta.islogged == true && localStorage.token !=''){
             this.isLogin = true
         }
     },

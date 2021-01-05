@@ -1,17 +1,24 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+      <Jumbotron />
+      <MediaList />
   </div>
 </template>
 <script>
 
+import Jumbotron from "@/components/HomeLayout/Jumbotron";
+import MediaList from "@/components/HomeLayout/MediaList";
+
 export default {
-  name: 'About',
+    components: {
+        name: 'About',
+        Jumbotron: Jumbotron,
+        MediaList: MediaList,
+    },
     mounted() {
         if (localStorage.token) {
             this.token = localStorage.token;
         }
-        axios.defaults.headers.common = {'Authorization': `Bearer ${this.token}`};
     },
     data(){
         return{
