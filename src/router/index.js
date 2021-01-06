@@ -1,8 +1,8 @@
 import axios from 'axios'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
-import About from "@/views/About";
+import Home from "@/views/Newsfeed/Home";
+import About from "@/views/Newsfeed/About";
 
 Vue.use(VueRouter)
 window.axios = axios
@@ -10,20 +10,31 @@ window.axios = axios
 
 
 const routes = [
+    // {
+    //     path: '/', name: 'Home', component: Home,
+    //     meta: {forVisitors: true,}
+    // },
+    // {
+    //     path: '/admin/dashboard', name: 'Dashboard', component: () => import('@/views/AdminPanel/Dashboard.vue')
+    // },
+
     {
         path: '/', name: 'Home', component: Home,
-        meta: {forVisitors: true,}
+        children: [
+            {
+                path: '/home',
+                component: Home
+            },
+        ]
     },
     {
-        path: '/about', name: 'About', component: About,
-        meta: {forAuth: true},
-    },
-    {
-        path: '/post/:id', name: 'Post', component: () => import('@/views/Post.vue'),
-        meta: {forAuth: true}
-    },
-    {
-        path: '/login', name: 'Login', component: () => import('@/views/Login.vue')
+        path: '/admin', component: import('@/views/AdminPanel/Dashboard.vue'),
+        children: [
+            {
+                path: '/dasboard',
+                component: import('@/views/AdminPanel/Dashboard.vue')
+            },
+        ]
     },
 ]
 

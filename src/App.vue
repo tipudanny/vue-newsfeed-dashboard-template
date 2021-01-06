@@ -1,17 +1,41 @@
 <template>
-  <div id="app">
-      <Header />
-      <router-view/>
-      <Footer />
-  </div>
+    <div id="app">
+
+        <div  v-if="isDashboard != 'active' ">
+            <Newsfeed @dashboard="dashboard" />
+        </div>
+
+        <div  v-if="isDashboard == 'active' ">
+            <Dashboard @dashboard="dashboard"/>
+        </div>
+
+    </div>
 </template>
 <script>
-import Header from "@/components/HomeLayout/Header";
-import Footer from "@/components/HomeLayout/Footer";
+import Newsfeed from "@/views/Newsfeed/Newsfeed";
+import Dashboard from "@/views/AdminPanel/Dashboard";
+
+
 export default {
     components: {
-        Header: Header,
-        Footer: Footer,
+        Newsfeed: Newsfeed,
+        Dashboard: Dashboard,
+    },
+    mounted() {
+        if (localStorage.isDashboard) {
+            this.isDashboard = localStorage.isDashboard;
+        }
+    },
+    data(){
+        return{
+            isDashboard:'',
+        }
+    },
+    methods:{
+        dashboard(e){
+            console.log(e);
+            this.isDashboard = e;
+        }
     }
 }
 </script>

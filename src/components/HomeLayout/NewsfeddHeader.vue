@@ -25,6 +25,7 @@
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
                         <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+
                         <li class="nav-item" @click="$emit('dashboard','active'),isDashboardActive()">
                             <router-link class="nav-link" to="/admin">Dashboard</router-link>
                         </li>
