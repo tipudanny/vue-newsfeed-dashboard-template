@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header v-on:dashboard="$emit('dashboard','active')"/>
-        <router-view></router-view>
+            <router-view></router-view>
         <Footer />
     </div>
 </template>

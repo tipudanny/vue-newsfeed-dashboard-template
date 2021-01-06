@@ -1,8 +1,26 @@
 <template>
     <div>
-        <li @click="$emit('dashboard','deactive'),isDashboardActive()">
-            <router-link class="nav-link" to="/">Go Back to News Feed</router-link>
-        </li>
+        <ul>
+            <li>
+                <a @click="$emit('dashboard','deactive'),isDashboardActive()">
+                    <router-link class="nav-link" to="/">News Feed</router-link>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <router-link class="nav-link" to="/admin/dashboard">Home</router-link>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <router-link class="nav-link" to="/admin/about">About</router-link>
+                </a>
+            </li>
+        </ul>
+
+
+
+
 
     </div>
 </template>

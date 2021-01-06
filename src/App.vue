@@ -1,8 +1,8 @@
 <template>
     <div id="app">
 
-        <div  v-if="isDashboard != 'active' ">
-            <Newsfeed @dashboard="dashboard" />
+        <div v-if="isDashboard != 'active' ">
+            <Newsfeed  @dashboard="dashboard" />
         </div>
 
         <div  v-if="isDashboard == 'active' ">

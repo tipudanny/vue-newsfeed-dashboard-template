@@ -1,14 +1,14 @@
 <template>
     <div>
-        <p>This is about page</p>
+        <p>This is Admin Home test...</p>
     </div>
+
 </template>
+
 <script>
-
-
 export default {
     components: {
-        name: 'About',
+        name: 'AdminHome',
     },
     mounted() {
 
@@ -18,5 +18,8 @@ export default {
 
         }
     },
+    methods:{
+    }
 }
 </script>
+<style scoped> </style>

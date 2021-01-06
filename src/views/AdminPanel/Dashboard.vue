@@ -1,7 +1,7 @@
 <template>
     <div>
         <DashboardHeader v-on:dashboard="$emit('dashboard','deactive')"/>
-        <router-view></router-view>
+            <router-view></router-view>
         <DashboardFooter />
     </div>
 </template>
