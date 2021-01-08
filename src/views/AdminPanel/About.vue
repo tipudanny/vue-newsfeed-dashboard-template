@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <p>This is Admin About Page test...</p>
-    </div>
+<h2>
+    This is Admin About Page.
+</h2>
 </template>
 
 <script>

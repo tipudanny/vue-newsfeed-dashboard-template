@@ -1,28 +1,27 @@
 <template>
     <div>
-        <DashboardHeader v-on:dashboard="$emit('dashboard','deactive')"/>
-            <router-view></router-view>
-        <DashboardFooter />
+        <router-link to="/admin/about">About</router-link>
+        <router-link to="/">News Feed</router-link>
+        <h2>
+            this is Admin Dashboard.
+        </h2>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import DashboardHeader from "@/components/AdminPanel/DashboardHeader";
-import DashboardFooter from "@/components/AdminPanel/DashboardFooter";
 export default {
     components: {
-        name: "Dashboard",
-        DashboardHeader: DashboardHeader,
-        DashboardFooter: DashboardFooter,
+        name: 'Dashboard',
     },
     mounted() {
-        if (localStorage.isDashboard) {
-            this.isDashboard = localStorage.isDashboard;
+        if ( localStorage.token !=''){
+            this.isLogin = true
         }
     },
-    data() {
-        return {
-            isDashboard:'',
+    data(){
+        return{
+            isLogin:false,
         }
     },
     methods:{
@@ -30,7 +29,4 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

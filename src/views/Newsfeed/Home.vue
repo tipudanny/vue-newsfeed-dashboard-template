@@ -6,7 +6,6 @@
         <AreaOfService />
         <CalculateCharge />
     </div>
-
 </template>
 
 <script>
@@ -25,14 +24,26 @@ export default {
         CalculateCharge: CalculateCharge,
     },
     mounted() {
-        this.islogged = this.$route.meta.islogged;
+        if (this.$route.meta.islogged == true && localStorage.token !=''){
+            this.isLogin = true
+        }
     },
     data(){
         return{
-            islogged:false,
+            isLogin:false,
         }
     },
     methods:{
+        logout(){
+            axios.post('http://currier.api/api/auth/logout').then((data)=>{
+                if (data.data.code == 'logout') {
+                    localStorage.token = '';
+                    localStorage.expiration = '';
+                    this.token = '';
+                    this.isLogin = false;
+                }
+            }).catch(error => {});
+        }
     }
 }
 </script>

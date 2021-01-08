@@ -1,44 +1,22 @@
 <template>
     <div>
-        <ul>
-            <li>
-                <a @click="$emit('dashboard','deactive'),isDashboardActive()">
-                    <router-link class="nav-link" to="/">News Feed</router-link>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <router-link class="nav-link" to="/admin/dashboard">Home</router-link>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <router-link class="nav-link" to="/admin/about">About</router-link>
-                </a>
-            </li>
-        </ul>
-
-
-
-
+        <li @click="$emit('dashboard','deactive'),isDashboardActive()">
+            <router-link class="nav-link" to="/">Go Back to News Feed</router-link>
+        </li>
 
     </div>
 </template>
 
 <script>
-
 export default {
-    components: {
-        name: "DashboardHeader",
-    },
+    name: "Header",
     mounted() {
-        if (localStorage.isDashboard) {
-            this.isDashboard = localStorage.isDashboard;
-        }
+
     },
     data() {
         return {
             isDashboard:'',
+            mainProps: { blank: true, blankColor: '#777', width: 55, height: 55, }
         }
     },
     methods:{
